@@ -1,0 +1,21 @@
+<h1>添加新备忘</h1>
+<%= form_tag(create_task_users_path,method:'post') do %>
+<label>内容</label>
+<%= text_field_tag 'content',nil%>
+<label>时间</label>
+<%= text_field_tag 'do_date',nil%>
+<%= hidden_field_tag :user_id,params[:id]%>
+<%= submit_tag '添加'%>
+<% end %>
+<h2>我的任务</h2>
+<table>
+  <tr>
+  	<th>创建时间</th>
+  	<th>内容</th>
+  	<th>执行时间</th>
+  	<th>操作</th>
+  </tr>
+  <tbody>
+    <%= render :partial => 'task',:collection =>@tasks%>
+  </tbody>
+</table>

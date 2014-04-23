@@ -1,0 +1,6 @@
+<tr>
+  <td><%= task.created_at.strftime("%Y-%m-%d")%></td>
+  <td><%= task.content%></td>
+  <td><%= task.do_date.strftime("%Y-%m-%d") if task.do_date%></td>
+  <td><%= link_to '完成', destroy_task_users_path(task), method: 'delete' %></td>
+</tr>
